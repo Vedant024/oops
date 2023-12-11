@@ -4,18 +4,18 @@ class complex
 {
 public:
     float real, img;
-    complex() // default constructor
+    complex()
     {
         real = 0;
         img = 0;
     }
-    complex operator+(complex);                       // declaration for addition
-    complex operator*(complex);                       // declaration for multiplication
-    friend ostream &operator<<(ostream &, complex &); // output function//<< operator return obj of ostream class//given ostream class as a return type
-    friend istream &operator>>(istream &, complex &); // input function
+    complex operator+(complex);                      
+    complex operator*(complex);                       
+    friend ostream &operator<<(ostream &, complex &); 
+    friend istream &operator>>(istream &, complex &); 
 };
-// operator overloading syntax
-complex complex::operator+(complex obj) /* This is automatically called when '+' is used with between two Complex objects */
+
+complex complex::operator+(complex obj) 
 {
     complex temp;
     temp.real = real + obj.real;
@@ -31,17 +31,17 @@ complex complex::operator*(complex obj)
     return (temp);
 }
 
-istream &operator>>(istream &is, complex &obj) // defining (extraction)>> operator
+istream &operator>>(istream &is, complex &obj) 
 {
-    is >> obj.real; // accepting real part with object of istream class
-    is >> obj.img;  // accepting imaginary part with object of istream class
+    is >> obj.real; 
+    is >> obj.img;  
     return is;
 }
 
-ostream &operator<<(ostream &os, complex &obj) // defining <<(insertion) operator
+ostream &operator<<(ostream &os, complex &obj) 
 {
-    os << obj.real;              // displaying real part with object of ostream class
-    os << "+" << obj.img << "i"; // displaying imaginary part with object of ostream class
+    os << obj.real;              
+    os << "+" << obj.img << "i"; 
     return os;
 }
 
