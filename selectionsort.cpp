@@ -8,7 +8,7 @@ void sort(T a[10] , int n)
     T temp;
     for ( i = 0; i < n; i++)
     {
-        for ( j = i; j < n-1; j++)
+        for ( j = i+1; j < n; j++)
         {
             if (a[i]>a[j])
             {
@@ -51,6 +51,7 @@ int main()
     {
         cout<<"\n 1.INTEGER ";
         cout<<"\n 2.FLOAT ";
+        cout<<"\n 3.EXIT ";
         cout<<"\n ENTER YOUR CHOICE ";
         cin>>ch;
         switch (ch)
@@ -70,7 +71,9 @@ int main()
         getdata(b,n);
         sort(b,n);
         display(b , n);
-        case 3: exit(0);
+        break;
+        case 3:
+        cout<<"\n\n Thanks for using this code!!";
         }
     } while (ch!=3);
     return 0;
